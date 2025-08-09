@@ -1,57 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive Portfolio | Your Name</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hi I am Alma</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #ffffff; /* White background */
+      font-family: 'Arial', sans-serif;
+      font-size: 3rem;
+      color: #333;
+      overflow: hidden;
+    }
+  </style>
 </head>
 <body>
-    <div class="video-background">
-        <video autoplay muted loop id="bgVideo">
-            <source src="assets/background.mp4" type="video/mp4">
-        </video>
-    </div>
+  <h1>Hi I am Alma</h1>
 
-    <div class="content">
-        <div class="profile-card">
-            <img src="assets/avatar.png" alt="Your Avatar" class="avatar">
-            <h1>Hello, I'm <span class="name-highlight">Your Name</span></h1>
-            <p class="title">Web Developer | Designer | Creative Professional</p>
-            
-            <div class="bio">
-                <p>I specialize in creating beautiful, functional digital experiences. With expertise in HTML, CSS, JavaScript, and more, I bring ideas to life.</p>
-            </div>
-            
-            <div class="skills">
-                <h2>My Skills</h2>
-                <div class="skill-tags">
-                    <span>HTML5</span>
-                    <span>CSS3</span>
-                    <span>JavaScript</span>
-                    <span>React</span>
-                    <span>Node.js</span>
-                </div>
-            </div>
-            
-            <div class="social-links">
-                <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="https://linkedin.com/in/yourprofile" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="https://twitter.com/yourhandle" target="_blank"><i class="fab fa-twitter"></i></a>
-                <a href="mailto:youremail@example.com"><i class="fas fa-envelope"></i></a>
-            </div>
-            
-            <button id="musicToggle" class="music-btn">
-                <i class="fas fa-music"></i> Toggle Background Music
-            </button>
-        </div>
-    </div>
-    
-    <audio id="bgMusic" loop>
-        <source src="assets/audio.mp3" type="audio/mpeg">
-    </audio>
+  <!-- Auto-play audio (muted for browser compatibility) -->
+  <audio autoplay muted loop>
+    <source src="your-audio-file.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
 
-    <script src="script.js"></script>
+  <script>
+    // Unmute audio after first user interaction (required by browsers)
+    document.body.addEventListener('click', function() {
+      const audio = document.querySelector('audio');
+      audio.muted = false;
+    });
+    document.body.addEventListener('touchstart', function() {
+      const audio = document.querySelector('audio');
+      audio.muted = false;
+    });
+  </script>
 </body>
 </html>
