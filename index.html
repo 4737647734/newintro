@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Portfolio | Your Name</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="video-background">
+        <video autoplay muted loop id="bgVideo">
+            <source src="assets/background.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <div class="content">
+        <div class="profile-card">
+            <img src="assets/avatar.png" alt="Your Avatar" class="avatar">
+            <h1>Hello, I'm <span class="name-highlight">Your Name</span></h1>
+            <p class="title">Web Developer | Designer | Creative Professional</p>
+            
+            <div class="bio">
+                <p>I specialize in creating beautiful, functional digital experiences. With expertise in HTML, CSS, JavaScript, and more, I bring ideas to life.</p>
+            </div>
+            
+            <div class="skills">
+                <h2>My Skills</h2>
+                <div class="skill-tags">
+                    <span>HTML5</span>
+                    <span>CSS3</span>
+                    <span>JavaScript</span>
+                    <span>React</span>
+                    <span>Node.js</span>
+                </div>
+            </div>
+            
+            <div class="social-links">
+                <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com/in/yourprofile" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://twitter.com/yourhandle" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="mailto:youremail@example.com"><i class="fas fa-envelope"></i></a>
+            </div>
+            
+            <button id="musicToggle" class="music-btn">
+                <i class="fas fa-music"></i> Toggle Background Music
+            </button>
+        </div>
+    </div>
+    
+    <audio id="bgMusic" loop>
+        <source src="assets/audio.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
