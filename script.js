@@ -1,16 +1,42 @@
-// Auto-play background music after page load
-window.addEventListener('load', function () {
+// Wait for page to load
+document.addEventListener('DOMContentLoaded', function () {
+    const musicToggle = document.getElementById('musicToggle');
     const bgMusic = document.getElementById('bgMusic');
+    const musicIcon = musicToggle.querySelector('i');
+    const musicText = musicToggle.querySelector('span');
 
-    // Try to play music
-    bgMusic.play().catch(e => {
-        console.log("Audio autoplay was blocked by browser. Waiting for user interaction...");
+    // Update button state based on audio play/pause
+    function updateButtonPlaying() {
+        musicText.textContent = 'Pause Music';
+        musicIcon.classList.remove('fa-play');
+        musicIcon.classList.add('fa-pause');
+    }
 
-        // Fallback: Play on first click/tap
-        document.addEventListener('click', function () {
-            bgMusic.play().catch(err => {
-                console.error("Audio play failed:", err);
-            });
-        }, { once: true });
+    function updateButtonPaused() {
+        musicText.textContent = 'Play Music';
+        musicIcon.classList.remove('fa-pause');
+        musicIcon.classList.add('fa-play');
+    }
+
+    // Toggle music on button click
+    musicToggle.addEventListener('click', function () {
+        if (bgMusic.paused) {
+            bgMusic.play()
+                .then(() => {
+                    updateButtonPlaying();
+                })
+                .catch(e => {
+                    console.error("Audio play failed:", e);
+                    alert("Audio play was blocked by browser. Please try again.");
+                });
+        } else {
+            bgMusic.pause();
+            updateButtonPaused();
+        }
     });
+
+    // Handle audio ended (optional: restart)
+    bgMusic.onended = function () {
+        updateButtonPaused();
+    };
 });
