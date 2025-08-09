@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hi, I'm Alma</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <!-- Background Video -->
@@ -18,11 +19,20 @@
     <!-- Main Content -->
     <div class="content">
         <div class="profile-card">
+            <!-- Avatar -->
+            <img src="assets/avatar.png" alt="Alma" class="avatar">
+
+            <!-- Name -->
             <h1>Hi, I'm <span class="name-highlight">Alma</span></h1>
+
+            <!-- Music Toggle Button -->
+            <button id="musicToggle" class="music-btn">
+                <i class="fas fa-music"></i> <span>Play Music</span>
+            </button>
         </div>
     </div>
 
-    <!-- Background Music (Auto Plays) -->
+    <!-- Background Music (No Autoplay) -->
     <audio id="bgMusic" loop>
         <source src="assets/audio.mp3" type="audio/mpeg">
         Your browser does not support audio.
